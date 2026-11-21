@@ -6,7 +6,7 @@
 # nothing should be printed.
 #
 # Function Description
-# Complete the printLinkedList function with the following parameter(s):
+# Complete the print_singly_linked_list function with the following parameter(s):
 # - SinglyLinkedListNode head: a reference to the head of the list
 #
 # Print
@@ -19,7 +19,7 @@
 # node.
 #
 # Note: Do not read any input from stdin/console. Complete the
-# printLinkedList function in the editor below.
+# print_singly_linked_list function in the editor below.
 #
 # Constraints
 # - 1 <= n <= 1000
@@ -40,19 +40,16 @@
 
 from data_structure.singly_linked_list import SinglyLinkedList
 
-def printLinkedList(head):
+def print_singly_linked_list(head):
     current = head
     while current:
         print(current.data)
         current = current.next
 
-if __name__ == '__main__':
-    count = int(input())
-
-    l = SinglyLinkedList()
-
-    for _ in range(count):
-        item = int(input())
-        l.insert_node(item)
-
-    printLinkedList(l.head)
+def print_doubly_linked_list(node, separator, file):
+    while node:
+        file.write(str(int(node.data)))
+        
+        node = node.next
+        if node:
+            file.write(separator)
