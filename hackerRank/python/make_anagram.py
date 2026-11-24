@@ -33,7 +33,7 @@
 
 from collections import Counter
 
-def make_anagram_prefer_remove(s1: str, s2: str) -> str:
+def make_anagram(s1: str, s2: str) -> str:
     c1 = Counter(s1)
     c2 = Counter(s2)
 
@@ -57,4 +57,4 @@ def make_anagram_prefer_remove(s1: str, s2: str) -> str:
 if __name__ == '__main__':
     s = input().strip()
     mid = len(s) // 2
-    print(make_anagram_prefer_remove(s[:mid], s[mid:]))
+    print(make_anagram(s[:mid], s[mid:]))
