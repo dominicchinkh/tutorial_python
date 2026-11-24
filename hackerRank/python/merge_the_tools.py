@@ -51,7 +51,7 @@
 # CA
 # AD
 
-# python3 exercise.py
+# python3 merge_the_tools.py
 
 def merge_the_tools(string, k):
     
