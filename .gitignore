@@ -224,3 +224,6 @@ __marimo__/
 
 # VS code
 .vscode
+
+# exercise
+hackerRank/exercise.py
