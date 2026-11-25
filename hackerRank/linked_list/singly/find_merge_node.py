@@ -78,6 +78,8 @@ from data_structure.singly_linked_list import SinglyLinkedList
 #   and then lands right on c1 at the exact same moment current2 (after switching to a1) lands on c1.
 
 def find_merge_node(head1, head2):
+    if head1 is None or head2 is None:
+        return None
     
     current1 = head1
     current2 = head2
@@ -86,7 +88,7 @@ def find_merge_node(head1, head2):
         current1 = current1.next if current1 is not None else head2
         current2 = current2.next if current2 is not None else head1
 
-    return current1.data
+    return current1.data if current1 is not None else None
 
 if __name__ == '__main__':
     with open(os.environ['OUTPUT_PATH'], 'w') as file:
