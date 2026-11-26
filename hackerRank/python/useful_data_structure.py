@@ -1,5 +1,6 @@
-from collections import Counter, defaultdict
+from collections import Counter, OrderedDict, defaultdict, namedtuple
 from itertools import permutations, product
+
 
 def demo_itertools_product() -> None:
     """Cartesian product (order matters, replacement allowed across iterables or repeat)."""
@@ -74,9 +75,42 @@ def demo_defaultdict() -> None:
     print("Char counts using defaultdict(int):", dict(freq))
 
 
+def demo_namedtuple() -> None:
+    """Tuple subclass with named fields for readable, immutable records."""
+    print("\n=== collections.namedtuple ===")
+
+    Point = namedtuple("Point", ["x", "y"])
+    p1 = Point(3, 4)
+    p2 = Point._make([7, 1])
+
+    print("Point p1:", p1, f"(x={p1.x}, y={p1.y})")
+    print("Point p2 from iterable:", p2)
+    print("Unpacked coordinates:", *p1)
+
+
+def demo_ordereddict() -> None:
+    """Dictionary subclass with explicit order-repositioning methods like move_to_end."""
+    print("\n=== collections.OrderedDict ===")
+
+    od = OrderedDict([("first", 1), ("second", 2), ("third", 3)])
+    od["fourth"] = 4
+
+    # Move an existing key to the end (or beginning with last=False)
+    od.move_to_end("first")
+    print("After move_to_end('first'):", list(od.items()))
+
+    od.move_to_end("fourth", last=False)
+    print("After move_to_end('fourth', last=False):", list(od.items()))
+
+    # Pop from either end: last=True (LIFO) or last=False (FIFO)
+    popped_oldest = od.popitem(last=False)
+    print("Popped oldest item:", popped_oldest, "-> remaining:", list(od.items()))
+
 if __name__ == "__main__":
     demo_itertools_product()
     demo_itertools_permutations()
     demo_counter()
     demo_set()
     demo_defaultdict()
+    demo_namedtuple()
+    demo_ordereddict()
