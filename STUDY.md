@@ -8,8 +8,13 @@
 
 ## Python
 * [Alphabet rangoli](hackerRank/python/alphabet_rangoli.py)
+* [Can stack cube](hackerRank/python/can_stack_cube.py)
+* [Company logo](hackerRank/python/company_logo.py)
 * [Designer door mat](hackerRank/python/designer_door_mat.py)
 * [Make anagram](hackerRank/python/make_anagram.py)
+* [Maximize it](hackerRank/python/maximize_it.py)
 * [Merge the tools](hackerRank/python/merge_the_tools.py)
 * [Minion game](hackerRank/python/minion_game.py)
+* [Triangle quest 1](hackerRank/python/triangle_quest_1.py)
+* [Triangle quest 2](hackerRank/python/triangle_quest_2.py)
 * [Useful data structure](hackerRank/python/useful_data_structure.py)
